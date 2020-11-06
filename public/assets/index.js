@@ -1,16 +1,66 @@
 const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
-$(document).ready(function () {
+(async () => {
+    for (var i = 0; i < 4; i++) {
 
-    let title = ['Gamer', 'Programmer', 'Blogger', 'Content Creator', 'Full-Stack Designer'];
+        $('.skill-list').addClass('hidden').removeClass('visible');
 
-    setInterval(async function () {
-
-        for (var i = 0; i < title.length; i++) {
-            $('#random-title').text(title[i]).animate('typing 1s steps(30, end), blink .75s step-end infinite');
-            await sleepNow(2000);
+        switch (i) {
+            case 0: {
+                $('#list-programming').addClass('visible').removeClass('hidden');
+                await sleepNow(2000);
+                break;
+            }
+            case 1: {
+                $('#list-games').addClass('visible').removeClass('hidden');
+                await sleepNow(2000);
+                break;
+            }
+            case 2: {
+                $('#list-blog').addClass('visible').removeClass('hidden');
+                await sleepNow(2000);
+                break;
+            }
+            case 3: {
+                $('#list-design').addClass('visible').removeClass('hidden');
+                await sleepNow(2000);
+                break;
+            }
         }
-    }, 15000);
 
+    }
+})();
+
+$(document).ready(function () {
+    setInterval(async function () {
+        for (var i = 0; i < 4; i++) {
+
+            $('.skill-list').addClass('hidden').removeClass('visible');
+
+            switch (i) {
+                case 0: {
+                    $('#list-programming').addClass('visible').removeClass('hidden');
+                    await sleepNow(2000);
+                    break;
+                }
+                case 1: {
+                    $('#list-games').addClass('visible').removeClass('hidden');
+                    await sleepNow(2000);
+                    break;
+                }
+                case 2: {
+                    $('#list-blog').addClass('visible').removeClass('hidden');
+                    await sleepNow(2000);
+                    break;
+                }
+                case 3: {
+                    $('#list-design').addClass('visible').removeClass('hidden');
+                    await sleepNow(2000);
+                    break;
+                }
+            }
+
+        }
+    }, 8000);
 });
 

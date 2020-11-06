@@ -1,20 +1,56 @@
+body {
+    font-family: 'Montserrat', sans-serif!important;
+    width: 100%;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+
 section {
     width: 100%;
+    
 }
 
 #landing {
     height: 100vh;
     width: 100%;
+    z-index: 1;
+}
+
+#landing .image {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -32px;
+    margin-right: -256px;
+    height: 512px;
+    background-color: khaki;
+    width: 512px;
+    border-radius: 512px;
 }
 
 #landing #heading {
+    z-index: 1000;
     text-align: left;
-    font-size: 32px;
-    margin-left: 16px;
+    font-size: 28px;
     display: inline-block;
+    margin-top: 0px;
 }
 
-#landing #heading #random-title  {
+.title-skill {
+    text-align: left;
+    font-size: 28px;
+    margin-top: -16px;
+    color: var(--primary);
     display: inline-block;
   	overflow: hidden;
   	letter-spacing: 2px;
@@ -23,6 +59,24 @@ section {
     border-right: 4px solid orange;
     box-sizing: border-box;
     padding-right: 8px;
+    font-weight: bold;
+}
+
+#landing #heading #random-title  {
+    color: var(--primary);
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 1s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+    padding-right: 8px;
+    font-weight: bold;
+}
+
+.do-typing {
+    animation: typing 1s steps(30, end), blink .75s step-end infinite!important;
 }
 
 @keyframes typing {
@@ -41,4 +95,46 @@ section {
     50% { 
         border-color: orange; 
     }
+}
+
+.skill-list {
+    position: relative;
+}
+
+.skill-list-item {
+    min-width: 128px;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #2a2a2a;
+    border-radius: 4px;
+}
+
+.skill-list-item a {
+    color: #eee!important;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) { 
+
+    .title-skill {
+        font-size: 64px;
+        margin-left: 96px;
+        margin-top: -48px;
+    }
+
+    .skill-lists {
+        margin-left: 96px;
+    }
+
+    #landing #heading {
+        font-size: 64px;
+        margin-left: 96px;
+        margin-top: 32px;
+    }
+
+    #landing #heading #random-title  {
+        padding-right: 16px;
+    }
+
 }
